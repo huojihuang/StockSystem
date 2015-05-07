@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-5-1 21:36:43 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Bankcard" table="bankcard" catalog="stocksystem">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="user" class="User" fetch="select">
+            <column name="User_id" not-null="true" />
+        </many-to-one>
+        <property name="number" type="string">
+            <column name="number" length="45" />
+        </property>
+        <property name="balance" type="java.lang.Double">
+            <column name="balance" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

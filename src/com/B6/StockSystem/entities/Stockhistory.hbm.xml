@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-5-1 21:36:43 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Stockhistory" table="stockhistory" catalog="stocksystem">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="stock" class="Stock" fetch="select">
+            <column name="Stock_id" not-null="true" />
+        </many-to-one>
+        <property name="date" type="timestamp">
+            <column name="date" length="19" />
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="price" precision="22" scale="0" />
+        </property>
+        <property name="scale" type="java.lang.Double">
+            <column name="scale" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

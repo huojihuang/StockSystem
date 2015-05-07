@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-5-1 21:36:43 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="MarketHasStock" table="market_has_stock" catalog="stocksystem">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="market" class="Market" fetch="select">
+            <column name="Market_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="stock" class="Stock" fetch="select">
+            <column name="Stock_id" not-null="true" />
+        </many-to-one>
+        <property name="dateTime" type="timestamp">
+            <column name="date_time" length="19" />
+        </property>
+        <property name="openingPrice" type="java.lang.Double">
+            <column name="openingPrice" precision="22" scale="0" />
+        </property>
+        <property name="closingPrice" type="java.lang.Double">
+            <column name="closingPrice" precision="22" scale="0" />
+        </property>
+        <property name="currentPrice" type="java.lang.Double">
+            <column name="currentPrice" precision="22" scale="0" />
+        </property>
+        <property name="hprice" type="java.lang.Double">
+            <column name="hPrice" precision="22" scale="0" />
+        </property>
+        <property name="lprice" type="java.lang.Double">
+            <column name="lPrice" precision="22" scale="0" />
+        </property>
+        <property name="totalNumber" type="java.lang.Integer">
+            <column name="totalNumber" />
+        </property>
+        <property name="turnover" type="java.lang.Double">
+            <column name="turnover" precision="22" scale="0" />
+        </property>
+        <property name="rate" type="java.lang.Double">
+            <column name="rate" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

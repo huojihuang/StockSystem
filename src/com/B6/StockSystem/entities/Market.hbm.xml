@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-5-1 21:36:43 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Market" table="market" catalog="stocksystem">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="45" />
+        </property>
+        <property name="curdot" type="java.lang.Double">
+            <column name="curdot" precision="22" scale="0" />
+        </property>
+        <property name="curprice" type="java.lang.Double">
+            <column name="curprice" precision="22" scale="0" />
+        </property>
+        <property name="rate" type="java.lang.Double">
+            <column name="rate" precision="22" scale="0" />
+        </property>
+        <property name="dealnumber" type="java.lang.Integer">
+            <column name="dealnumber" />
+        </property>
+        <property name="turnover" type="java.lang.Double">
+            <column name="turnover" precision="22" scale="0" />
+        </property>
+        <set name="marketHasStocks" table="market_has_stock" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Market_id" not-null="true" />
+            </key>
+            <one-to-many class="MarketHasStock" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-5-1 21:36:43 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Expected" table="expected" catalog="stocksystem">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="stockFocus" class="StockFocus" fetch="select">
+            <column name="Stock_focus_id" not-null="true" />
+        </many-to-one>
+        <property name="price" type="string">
+            <column name="price" length="45" />
+        </property>
+        <property name="dateTime" type="timestamp">
+            <column name="date_time" length="19" />
+        </property>
+        <property name="operation" type="string">
+            <column name="operation" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

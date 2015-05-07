@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-5-1 21:36:43 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Bbsblog" table="bbsblog" catalog="stocksystem">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="user" class="User" fetch="select">
+            <column name="User_id" not-null="true" />
+        </many-to-one>
+        <property name="title" type="string">
+            <column name="title" length="200" />
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="2000" />
+        </property>
+        <property name="dateTime" type="timestamp">
+            <column name="date_time" length="19" />
+        </property>
+        <property name="isTop" type="java.lang.Boolean">
+            <column name="isTop" />
+        </property>
+        <set name="comments" table="comment" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="BBSblog_id" not-null="true" />
+            </key>
+            <one-to-many class="Comment" />
+        </set>
+    </class>
+</hibernate-mapping>

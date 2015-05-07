@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-5-1 21:36:43 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Stock" table="stock" catalog="stocksystem">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="company" class="Company" fetch="select">
+            <column name="Company_id" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="200" />
+        </property>
+        <property name="code" type="string">
+            <column name="code" length="200" />
+        </property>
+        <property name="publishDate" type="timestamp">
+            <column name="publishDate" length="19" />
+        </property>
+        <set name="stockHases" table="stock_has" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Stock_id" not-null="true" />
+            </key>
+            <one-to-many class="StockHas" />
+        </set>
+        <set name="marketHasStocks" table="market_has_stock" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Stock_id" not-null="true" />
+            </key>
+            <one-to-many class="MarketHasStock" />
+        </set>
+        <set name="tradehistories" table="tradehistory" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Stock_id" not-null="true" />
+            </key>
+            <one-to-many class="Tradehistory" />
+        </set>
+        <set name="companies" table="company" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Stock_id" not-null="true" />
+            </key>
+            <one-to-many class="Company" />
+        </set>
+        <set name="stockFocuses" table="stock_focus" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Stock_id" not-null="true" />
+            </key>
+            <one-to-many class="StockFocus" />
+        </set>
+        <set name="stockhistories" table="stockhistory" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Stock_id" not-null="true" />
+            </key>
+            <one-to-many class="Stockhistory" />
+        </set>
+    </class>
+</hibernate-mapping>
