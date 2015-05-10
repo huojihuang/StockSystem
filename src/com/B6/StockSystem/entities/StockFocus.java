@@ -1,7 +1,6 @@
 package com.B6.StockSystem.entities;
 
-// default package
-// Generated 2015-5-1 21:36:43 by Hibernate Tools 3.4.0.CR1
+// Generated 2015-5-9 15:48:06 by Hibernate Tools 3.4.0.CR1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +10,7 @@ import java.util.Set;
  */
 public class StockFocus implements java.io.Serializable {
 
-	private int id;
+	private Integer id;
 	private User user;
 	private Stock stock;
 	private Set expecteds = new HashSet(0);
@@ -19,24 +18,22 @@ public class StockFocus implements java.io.Serializable {
 	public StockFocus() {
 	}
 
-	public StockFocus(int id, User user, Stock stock) {
-		this.id = id;
+	public StockFocus(User user, Stock stock) {
 		this.user = user;
 		this.stock = stock;
 	}
 
-	public StockFocus(int id, User user, Stock stock, Set expecteds) {
-		this.id = id;
+	public StockFocus(User user, Stock stock, Set expecteds) {
 		this.user = user;
 		this.stock = stock;
 		this.expecteds = expecteds;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

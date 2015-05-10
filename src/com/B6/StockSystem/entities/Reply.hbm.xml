@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2015-5-1 21:36:43 by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 2015-5-9 15:48:07 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="Reply" table="reply" catalog="stocksystem">
-        <id name="id" type="int">
+    <class name="com.B6.StockSystem.entities.Reply" table="reply" catalog="stocksystem">
+        <id name="id" type="java.lang.Integer">
             <column name="id" />
-            <generator class="native" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="user" class="User" fetch="select">
+        <many-to-one name="user" class="com.B6.StockSystem.entities.User" fetch="select">
             <column name="User_id" not-null="true" />
         </many-to-one>
-        <many-to-one name="comment" class="Comment" fetch="select">
+        <many-to-one name="comment" class="com.B6.StockSystem.entities.Comment" fetch="select">
             <column name="Comment_id" not-null="true" />
         </many-to-one>
         <property name="content" type="string">

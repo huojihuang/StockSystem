@@ -1,7 +1,6 @@
 package com.B6.StockSystem.entities;
 
-// default package
-// Generated 2015-5-1 21:36:43 by Hibernate Tools 3.4.0.CR1
+// Generated 2015-5-9 15:48:06 by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 import java.util.HashSet;
@@ -12,7 +11,7 @@ import java.util.Set;
  */
 public class Stock implements java.io.Serializable {
 
-	private int id;
+	private Integer id;
 	private Company company;
 	private String name;
 	private String code;
@@ -20,23 +19,19 @@ public class Stock implements java.io.Serializable {
 	private Set stockHases = new HashSet(0);
 	private Set marketHasStocks = new HashSet(0);
 	private Set tradehistories = new HashSet(0);
-	private Set companies = new HashSet(0);
 	private Set stockFocuses = new HashSet(0);
 	private Set stockhistories = new HashSet(0);
 
 	public Stock() {
 	}
 
-	public Stock(int id, Company company) {
-		this.id = id;
+	public Stock(Company company) {
 		this.company = company;
 	}
 
-	public Stock(int id, Company company, String name, String code,
-			Date publishDate, Set stockHases, Set marketHasStocks,
-			Set tradehistories, Set companies, Set stockFocuses,
-			Set stockhistories) {
-		this.id = id;
+	public Stock(Company company, String name, String code, Date publishDate,
+			Set stockHases, Set marketHasStocks, Set tradehistories,
+			Set stockFocuses, Set stockhistories) {
 		this.company = company;
 		this.name = name;
 		this.code = code;
@@ -44,16 +39,15 @@ public class Stock implements java.io.Serializable {
 		this.stockHases = stockHases;
 		this.marketHasStocks = marketHasStocks;
 		this.tradehistories = tradehistories;
-		this.companies = companies;
 		this.stockFocuses = stockFocuses;
 		this.stockhistories = stockhistories;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -111,14 +105,6 @@ public class Stock implements java.io.Serializable {
 
 	public void setTradehistories(Set tradehistories) {
 		this.tradehistories = tradehistories;
-	}
-
-	public Set getCompanies() {
-		return this.companies;
-	}
-
-	public void setCompanies(Set companies) {
-		this.companies = companies;
 	}
 
 	public Set getStockFocuses() {

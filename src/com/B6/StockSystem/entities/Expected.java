@@ -1,7 +1,6 @@
 package com.B6.StockSystem.entities;
 
-// default package
-// Generated 2015-5-1 21:36:43 by Hibernate Tools 3.4.0.CR1
+// Generated 2015-5-9 15:48:06 by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 
@@ -10,7 +9,7 @@ import java.util.Date;
  */
 public class Expected implements java.io.Serializable {
 
-	private int id;
+	private Integer id;
 	private StockFocus stockFocus;
 	private String price;
 	private Date dateTime;
@@ -19,25 +18,23 @@ public class Expected implements java.io.Serializable {
 	public Expected() {
 	}
 
-	public Expected(int id, StockFocus stockFocus) {
-		this.id = id;
+	public Expected(StockFocus stockFocus) {
 		this.stockFocus = stockFocus;
 	}
 
-	public Expected(int id, StockFocus stockFocus, String price, Date dateTime,
+	public Expected(StockFocus stockFocus, String price, Date dateTime,
 			String operation) {
-		this.id = id;
 		this.stockFocus = stockFocus;
 		this.price = price;
 		this.dateTime = dateTime;
 		this.operation = operation;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

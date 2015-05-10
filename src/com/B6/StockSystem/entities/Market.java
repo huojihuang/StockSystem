@@ -1,7 +1,6 @@
 package com.B6.StockSystem.entities;
 
-// default package
-// Generated 2015-5-1 21:36:43 by Hibernate Tools 3.4.0.CR1
+// Generated 2015-5-9 15:48:06 by Hibernate Tools 3.4.0.CR1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +10,7 @@ import java.util.Set;
  */
 public class Market implements java.io.Serializable {
 
-	private int id;
+	private Integer id;
 	private String name;
 	private Double curdot;
 	private Double curprice;
@@ -23,14 +22,8 @@ public class Market implements java.io.Serializable {
 	public Market() {
 	}
 
-	public Market(int id) {
-		this.id = id;
-	}
-
-	public Market(int id, String name, Double curdot, Double curprice,
-			Double rate, Integer dealnumber, Double turnover,
-			Set marketHasStocks) {
-		this.id = id;
+	public Market(String name, Double curdot, Double curprice, Double rate,
+			Integer dealnumber, Double turnover, Set marketHasStocks) {
 		this.name = name;
 		this.curdot = curdot;
 		this.curprice = curprice;
@@ -40,11 +33,11 @@ public class Market implements java.io.Serializable {
 		this.marketHasStocks = marketHasStocks;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

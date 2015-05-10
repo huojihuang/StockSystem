@@ -1,7 +1,6 @@
 package com.B6.StockSystem.entities;
 
-// default package
-// Generated 2015-5-1 21:36:43 by Hibernate Tools 3.4.0.CR1
+// Generated 2015-5-9 15:48:06 by Hibernate Tools 3.4.0.CR1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +10,7 @@ import java.util.Set;
  */
 public class User implements java.io.Serializable {
 
-	private int id;
+	private Integer id;
 	private String name;
 	private String tel;
 	private String email;
@@ -30,15 +29,10 @@ public class User implements java.io.Serializable {
 	public User() {
 	}
 
-	public User(int id) {
-		this.id = id;
-	}
-
-	public User(int id, String name, String tel, String email, String address,
+	public User(String name, String tel, String email, String address,
 			Boolean isAdministrator, String nickname, String password,
 			Set stockFocuses, Set replies, Set stockHases, Set tradehistories,
 			Set bankcards, Set bbsblogs, Set comments) {
-		this.id = id;
 		this.name = name;
 		this.tel = tel;
 		this.email = email;
@@ -55,11 +49,11 @@ public class User implements java.io.Serializable {
 		this.comments = comments;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

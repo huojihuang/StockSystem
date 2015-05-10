@@ -1,7 +1,6 @@
 package com.B6.StockSystem.entities;
 
-// default package
-// Generated 2015-5-1 21:36:43 by Hibernate Tools 3.4.0.CR1
+// Generated 2015-5-9 15:48:06 by Hibernate Tools 3.4.0.CR1
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,8 +10,7 @@ import java.util.Set;
  */
 public class Company implements java.io.Serializable {
 
-	private int id;
-	private Stock stock;
+	private Integer id;
 	private String name;
 	private String tel;
 	private String email;
@@ -23,15 +21,8 @@ public class Company implements java.io.Serializable {
 	public Company() {
 	}
 
-	public Company(int id, Stock stock) {
-		this.id = id;
-		this.stock = stock;
-	}
-
-	public Company(int id, Stock stock, String name, String tel, String email,
-			String address, String establisher, Set stocks) {
-		this.id = id;
-		this.stock = stock;
+	public Company(String name, String tel, String email, String address,
+			String establisher, Set stocks) {
 		this.name = name;
 		this.tel = tel;
 		this.email = email;
@@ -40,20 +31,12 @@ public class Company implements java.io.Serializable {
 		this.stocks = stocks;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
-	}
-
-	public Stock getStock() {
-		return this.stock;
-	}
-
-	public void setStock(Stock stock) {
-		this.stock = stock;
 	}
 
 	public String getName() {

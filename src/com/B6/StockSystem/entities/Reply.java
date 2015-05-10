@@ -1,7 +1,6 @@
 package com.B6.StockSystem.entities;
 
-// default package
-// Generated 2015-5-1 21:36:43 by Hibernate Tools 3.4.0.CR1
+// Generated 2015-5-9 15:48:06 by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 
@@ -10,7 +9,7 @@ import java.util.Date;
  */
 public class Reply implements java.io.Serializable {
 
-	private int id;
+	private Integer id;
 	private User user;
 	private Comment comment;
 	private String content;
@@ -19,26 +18,23 @@ public class Reply implements java.io.Serializable {
 	public Reply() {
 	}
 
-	public Reply(int id, User user, Comment comment) {
-		this.id = id;
+	public Reply(User user, Comment comment) {
 		this.user = user;
 		this.comment = comment;
 	}
 
-	public Reply(int id, User user, Comment comment, String content,
-			Date dateTime) {
-		this.id = id;
+	public Reply(User user, Comment comment, String content, Date dateTime) {
 		this.user = user;
 		this.comment = comment;
 		this.content = content;
 		this.dateTime = dateTime;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

@@ -1,7 +1,6 @@
 package com.B6.StockSystem.entities;
 
-// default package
-// Generated 2015-5-1 21:36:43 by Hibernate Tools 3.4.0.CR1
+// Generated 2015-5-9 15:48:06 by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 import java.util.HashSet;
@@ -12,7 +11,7 @@ import java.util.Set;
  */
 public class Bbsblog implements java.io.Serializable {
 
-	private int id;
+	private Integer id;
 	private User user;
 	private String title;
 	private String content;
@@ -23,14 +22,12 @@ public class Bbsblog implements java.io.Serializable {
 	public Bbsblog() {
 	}
 
-	public Bbsblog(int id, User user) {
-		this.id = id;
+	public Bbsblog(User user) {
 		this.user = user;
 	}
 
-	public Bbsblog(int id, User user, String title, String content,
-			Date dateTime, Boolean isTop, Set comments) {
-		this.id = id;
+	public Bbsblog(User user, String title, String content, Date dateTime,
+			Boolean isTop, Set comments) {
 		this.user = user;
 		this.title = title;
 		this.content = content;
@@ -39,11 +36,11 @@ public class Bbsblog implements java.io.Serializable {
 		this.comments = comments;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
